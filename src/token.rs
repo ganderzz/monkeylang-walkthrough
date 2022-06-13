@@ -9,6 +9,15 @@ pub enum TokenType {
 
     ASSIGN,
     PLUS,
+    MINUS,
+    BANG,
+    ASTERISK,
+    FORWARDSLASH,
+    LT,
+    GT,
+
+    EQ,
+    NOTEQ,
 
     COMMA,
     SEMICOLON,
@@ -20,23 +29,22 @@ pub enum TokenType {
 
     FUNCTION,
     LET,
+    TRUE,
+    FALSE,
+    IF,
+    ELSE,
+    RETURN,
 }
 
 #[derive(Debug, PartialEq)]
 #[allow(dead_code)]
 pub struct Token {
-    t_type: TokenType,
-    line_number: i32,
-    file_name: String,
+    pub t_type: TokenType,
 }
 
 impl Token {
     pub fn new(t: TokenType) -> Self {
-        Token {
-            t_type: t,
-            line_number: 0,
-            file_name: String::from(""),
-        }
+        Token { t_type: t }
     }
 }
 

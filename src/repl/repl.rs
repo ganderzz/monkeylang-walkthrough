@@ -16,9 +16,9 @@ pub fn run() {
             .expect("Could not read from stdin.");
 
         match input.to_lowercase().as_str() {
-            "q" => break,
-            _ => {
-                let mut lexer = Lexer::new(input);
+            "q" => return,
+            rest => {
+                let mut lexer = Lexer::new(rest);
 
                 println!("{:?}", lexer.read());
             }
